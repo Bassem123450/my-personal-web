@@ -13,12 +13,12 @@ const MOVE_TOLERANCE_PX = 10;
 const cards = [
   {
     id: 'nar',
-    title: 'NAR',
+    title: 'Naraakum',
     badge: 'Home Healthcare',
-    desc: 'NAR is a platform for home healthcare, remote medical consultations, and remote blood pressure and glucose monitoring.',
+    desc: 'Naraakum is a platform for home healthcare, remote medical consultations, and remote blood pressure and glucose monitoring.',
     image: narImage,
     href: 'https://www.naraakum.com/',
-    openLabel: 'Open NAR project'
+    openLabel: 'Open Naraakum project'
   },
   {
     id: 'qqs',
@@ -314,7 +314,7 @@ export default function GlassDeck() {
                         cycleDeck('next');
                       }}
                     >
-                      <span aria-hidden="true">›</span>
+                      <span aria-hidden="true">{'>'}</span>
                     </button>
                   ) : null}
 

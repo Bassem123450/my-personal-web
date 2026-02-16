@@ -58,9 +58,10 @@
 .timeline-company-title {
   margin: 0 0 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.72rem;
-  color: rgba(255, 219, 190, 0.78);
+  letter-spacing: 0.14em;
+  font-size: clamp(0.95rem, 1.35vw, 1.14rem);
+  font-weight: 800;
+  color: rgba(255, 233, 214, 0.92);
 }
 
 .timeline-company-marquee {
@@ -158,42 +159,6 @@
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.28));
-}
-
-.timeline-company-placeholder {
-  width: 2.7rem;
-  height: 2.7rem;
-  border-radius: 0.78rem;
-  position: relative;
-  border: 1px solid rgba(255, 228, 206, 0.44);
-  background:
-    linear-gradient(140deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.04) 68%),
-    rgba(16, 10, 8, 0.26);
-}
-
-.timeline-company-placeholder-bar {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 0.34rem;
-  height: 1.35rem;
-  transform: translate(-50%, -50%);
-  border-radius: 0.5rem;
-  background: rgba(255, 214, 180, 0.7);
-  box-shadow: 0 0 12px rgba(255, 181, 130, 0.32);
-}
-
-.timeline-company-placeholder-orb {
-  position: absolute;
-  top: 34%;
-  left: 68%;
-  width: 0.66rem;
-  height: 0.66rem;
-  transform: translate(-50%, -50%);
-  border-radius: 999px;
-  border: 1px solid rgba(255, 228, 206, 0.72);
-  background: radial-gradient(circle at 40% 34%, rgba(255, 248, 242, 0.95), rgba(255, 196, 151, 0.84));
-  box-shadow: 0 0 14px rgba(255, 177, 122, 0.36);
 }
 
 .timeline-company-card:hover,

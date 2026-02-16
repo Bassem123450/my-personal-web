@@ -13,6 +13,7 @@ import planeImage from '../assets/seedream-4.5_Top-down_view_of_a_sleek_premium_
 import bankDeCairoLogo from '../assets/bank-de-cairo.jpg';
 import innoTechLogo from '../assets/innotechegy_logo.jpg';
 import makeYourMiracleLogo from '../assets/mym_make_your_miracle_logo.jpg';
+import qeemaTechLogo from '../assets/qeema_tech_logo.jpg';
 import sofcoLogo from '../assets/sofco.jpg';
 import './Timeline.css';
 
@@ -104,35 +105,26 @@ const workedWithCompanies = [
   {
     id: 'innotech',
     name: 'InnoTech',
-    kind: 'image',
     asset: innoTechLogo
-  },
-  {
-    id: 'amit-learning',
-    name: 'Amit Learning',
-    kind: 'placeholder'
   },
   {
     id: 'qeema-tech',
     name: 'Qeema Tech',
-    kind: 'placeholder'
+    asset: qeemaTechLogo
   },
   {
     id: 'make-your-miracle',
     name: 'Make Your Miracle',
-    kind: 'image',
     asset: makeYourMiracleLogo
   },
   {
     id: 'bank-de-cairo',
     name: 'Bank De Cairo',
-    kind: 'image',
     asset: bankDeCairoLogo
   },
   {
     id: 'sofco',
     name: 'SOFCO',
-    kind: 'image',
     asset: sofcoLogo
   }
 ];
@@ -296,7 +288,7 @@ export default function Timeline() {
             Road Timeline
           </p>
           <div className="timeline-company-strip" aria-label="Companies Worked With">
-            <p className="timeline-company-title">Companies Worked With</p>
+            <p className="timeline-company-title">Company Worked With</p>
             <motion.div
               className="timeline-company-marquee"
               initial={reduceMotion ? false : { opacity: 0, y: 10 }}
@@ -314,19 +306,12 @@ export default function Timeline() {
                     {workedWithCompanies.map((company) => (
                       <li key={`${company.id}-${cloneIndex}`} className="timeline-company-card" aria-label={company.name}>
                         <span className="timeline-company-logo-frame">
-                          {company.kind === 'image' ? (
-                            <img
-                              className="timeline-company-logo"
-                              src={company.asset}
-                              alt={cloneIndex === 0 ? company.name : ''}
-                              loading="lazy"
-                            />
-                          ) : (
-                            <span className="timeline-company-placeholder" aria-hidden="true">
-                              <span className="timeline-company-placeholder-bar" />
-                              <span className="timeline-company-placeholder-orb" />
-                            </span>
-                          )}
+                          <img
+                            className="timeline-company-logo"
+                            src={company.asset}
+                            alt={cloneIndex === 0 ? company.name : ''}
+                            loading="lazy"
+                          />
                         </span>
                       </li>
                     ))}
