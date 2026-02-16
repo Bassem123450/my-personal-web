@@ -1,0 +1,596 @@
+.github-portfolio-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(3.8rem, 8vw, 6.1rem) clamp(1rem, 3vw, 2.6rem) clamp(4.2rem, 8vw, 6.6rem);
+  background:
+    radial-gradient(78% 62% at 50% 108%, rgba(165, 95, 50, 0.26) 0%, rgba(165, 95, 50, 0) 70%),
+    radial-gradient(48% 44% at 14% 0%, rgba(193, 136, 94, 0.14) 0%, rgba(193, 136, 94, 0) 72%),
+    linear-gradient(180deg, #08070a 0%, #09070a 44%, #0c0807 100%);
+}
+
+.github-portfolio-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.28) 0.45px, transparent 0.45px),
+    radial-gradient(rgba(255, 173, 116, 0.2) 0.5px, transparent 0.5px);
+  background-size: 3px 3px, 4px 4px;
+  background-position: 0 0, 1px 2px;
+}
+
+.github-portfolio-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1220px, 100%);
+  margin-inline: auto;
+}
+
+.github-portfolio-header {
+  width: min(780px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.github-portfolio-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  color: rgba(252, 216, 191, 0.92);
+}
+
+.github-portfolio-header h2 {
+  margin: 0.68rem 0 0.52rem;
+  font-family: var(--heading-font);
+  font-size: clamp(1.9rem, 4.8vw, 3.42rem);
+  letter-spacing: -0.02em;
+  color: #fff8f2;
+  line-height: 1.03;
+}
+
+.github-portfolio-subtitle {
+  margin: 0;
+  color: rgba(237, 224, 214, 0.9);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.68;
+  text-wrap: balance;
+}
+
+.github-portfolio-scene {
+  position: relative;
+  margin-top: clamp(1.8rem, 3.2vw, 2.7rem);
+  border-radius: 1.4rem;
+  min-height: clamp(440px, 56vw, 650px);
+  padding: clamp(0.8rem, 1.5vw, 1.2rem);
+  border: 1px solid rgba(255, 226, 204, 0.14);
+  background:
+    radial-gradient(100% 120% at 50% 0%, rgba(255, 184, 131, 0.1) 0%, rgba(255, 184, 131, 0) 66%),
+    linear-gradient(165deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 52%, rgba(255, 255, 255, 0) 100%),
+    rgba(16, 11, 9, 0.5);
+  backdrop-filter: blur(10px) saturate(122%);
+  -webkit-backdrop-filter: blur(10px) saturate(122%);
+}
+
+.github-portfolio-scene::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: clamp(220px, 45vw, 520px);
+  height: clamp(130px, 20vw, 230px);
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 165, 98, 0.3) 0%, rgba(255, 165, 98, 0) 72%);
+  filter: blur(24px);
+}
+
+.github-portfolio-pills {
+  position: absolute;
+  inset: 0;
+}
+
+.github-portfolio-pill {
+  --pill-rotate: 0deg;
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.9rem;
+  padding: 0.4rem 0.78rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: #fff4e8;
+  border: 1px solid rgba(255, 216, 185, 0.32);
+  background:
+    linear-gradient(138deg, rgba(255, 225, 199, 0.28) 0%, rgba(255, 225, 199, 0.07) 54%),
+    rgba(36, 24, 17, 0.52);
+  box-shadow: 0 10px 20px rgba(4, 3, 3, 0.3);
+  transform: rotate(var(--pill-rotate));
+  animation: gh-pill-float 6.2s ease-in-out infinite;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.github-portfolio-pill:hover {
+  transform: translateY(-2px) rotate(var(--pill-rotate));
+  border-color: rgba(255, 204, 162, 0.74);
+  box-shadow: 0 12px 22px rgba(5, 4, 4, 0.34), 0 0 18px rgba(255, 162, 97, 0.2);
+}
+
+.github-portfolio-pill--1 {
+  left: 8%;
+  top: 10%;
+  --pill-rotate: -14deg;
+  animation-delay: 0s;
+}
+
+.github-portfolio-pill--2 {
+  left: 36%;
+  top: 3%;
+  --pill-rotate: 6deg;
+  animation-delay: 0.45s;
+}
+
+.github-portfolio-pill--3 {
+  right: 12%;
+  top: 11%;
+  --pill-rotate: 12deg;
+  animation-delay: 0.9s;
+}
+
+.github-portfolio-pill--4 {
+  right: 8%;
+  top: 36%;
+  --pill-rotate: -9deg;
+  animation-delay: 1.35s;
+}
+
+.github-portfolio-pill--5 {
+  left: 14%;
+  top: 34%;
+  --pill-rotate: 10deg;
+  animation-delay: 1.8s;
+}
+
+.github-portfolio-stack {
+  position: relative;
+  height: clamp(370px, 44vw, 510px);
+  margin-top: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.github-portfolio-card {
+  --x: 0px;
+  --y: 0px;
+  --r: 0deg;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(170px, 22vw, 264px);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  border: 1px solid rgba(255, 226, 205, 0.22);
+  background:
+    linear-gradient(170deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.02) 56%),
+    rgba(18, 13, 10, 0.75);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  box-shadow:
+    0 20px 34px rgba(7, 6, 6, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y)), 0) rotate(var(--r));
+  transition: transform 230ms ease, border-color 230ms ease, box-shadow 230ms ease;
+  animation: gh-card-enter 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--card-order) * 90ms);
+}
+
+.github-portfolio-card:hover {
+  transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y) - 8px), 0) rotate(var(--r)) scale(1.015);
+  border-color: rgba(255, 210, 172, 0.62);
+  box-shadow: 0 24px 38px rgba(6, 5, 5, 0.46), 0 0 22px rgba(255, 163, 95, 0.18);
+}
+
+.github-portfolio-card:focus-visible {
+  outline: 2px solid rgba(255, 190, 133, 0.95);
+  outline-offset: 3px;
+}
+
+.github-portfolio-card--front {
+  --x: 0px;
+  --y: 32px;
+  --r: 0deg;
+  z-index: 13;
+}
+
+.github-portfolio-card--left {
+  --x: -210px;
+  --y: 86px;
+  --r: -14deg;
+  z-index: 10;
+}
+
+.github-portfolio-card--right {
+  --x: 210px;
+  --y: 86px;
+  --r: 14deg;
+  z-index: 10;
+}
+
+.github-portfolio-card--top {
+  --x: 0px;
+  --y: -34px;
+  --r: -3deg;
+  z-index: 11;
+}
+
+.github-portfolio-card__tag {
+  display: block;
+  margin: 0.68rem 0.78rem 0.52rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.66rem;
+  color: rgba(255, 220, 194, 0.92);
+}
+
+.github-portfolio-card__media {
+  margin-inline: 0.64rem;
+  border-radius: 0.74rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 224, 198, 0.28);
+  background: linear-gradient(156deg, rgba(255, 226, 200, 0.22), rgba(255, 226, 200, 0.04) 56%);
+  aspect-ratio: 16 / 10;
+}
+
+.github-portfolio-card__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.github-portfolio-card__title {
+  display: block;
+  margin: 0.58rem 0.78rem 0.78rem;
+  font-family: var(--heading-font);
+  font-size: 0.88rem;
+  line-height: 1.34;
+  color: #fff8ef;
+}
+
+.github-portfolio-folder {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  width: clamp(330px, 72vw, 820px);
+  transform: translateX(-50%);
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.github-portfolio-folder__back {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  border-radius: 0 1.2rem 1.2rem 1.2rem;
+  border: 1px solid rgba(255, 220, 194, 0.22);
+  background:
+    linear-gradient(160deg, rgba(255, 231, 211, 0.24) 0%, rgba(255, 231, 211, 0.05) 62%),
+    rgba(66, 38, 21, 0.72);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.github-portfolio-folder__back::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 2%;
+  width: clamp(118px, 20vw, 188px);
+  height: clamp(28px, 4.2vw, 40px);
+  border-radius: 0.92rem 0.92rem 0 0;
+  border: 1px solid rgba(255, 220, 194, 0.2);
+  border-bottom: none;
+  background:
+    linear-gradient(145deg, rgba(255, 224, 198, 0.24), rgba(255, 224, 198, 0.06) 64%),
+    rgba(83, 47, 25, 0.68);
+}
+
+.github-portfolio-folder__back--rear {
+  top: 26px;
+  min-height: clamp(164px, 24vw, 226px);
+  transform: translateX(calc(-50% + 26px));
+  opacity: 0.64;
+  z-index: 1;
+}
+
+.github-portfolio-folder__back--mid {
+  top: 14px;
+  min-height: clamp(170px, 25vw, 236px);
+  transform: translateX(calc(-50% + 14px));
+  opacity: 0.9;
+}
+
+.github-portfolio-folder::before {
+  content: '';
+  position: absolute;
+  inset: auto 7% 8% 7%;
+  height: clamp(40px, 7vw, 66px);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 169, 102, 0.45) 0%, rgba(255, 169, 102, 0) 74%);
+  filter: blur(16px);
+}
+
+.github-portfolio-folder__tab {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: clamp(150px, 28vw, 256px);
+  height: clamp(38px, 5.8vw, 62px);
+  border-radius: 1.1rem 1.1rem 0 0;
+  border: 1px solid rgba(255, 222, 196, 0.26);
+  border-bottom: none;
+  background:
+    linear-gradient(145deg, rgba(255, 224, 198, 0.32), rgba(255, 224, 198, 0.08) 64%),
+    rgba(116, 67, 37, 0.44);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.github-portfolio-folder__body {
+  position: relative;
+  z-index: 4;
+  margin-top: -1px;
+  min-height: clamp(176px, 26vw, 248px);
+  padding: clamp(1rem, 2vw, 1.4rem);
+  border-radius: 0 1.32rem 1.32rem 1.32rem;
+  border: 1px solid rgba(255, 222, 196, 0.32);
+  background:
+    radial-gradient(98% 90% at 60% 0%, rgba(255, 180, 125, 0.26) 0%, rgba(255, 180, 125, 0) 66%),
+    linear-gradient(160deg, rgba(255, 238, 223, 0.34) 0%, rgba(255, 238, 223, 0.06) 56%, rgba(255, 238, 223, 0.02) 100%),
+    rgba(104, 62, 35, 0.58);
+  box-shadow:
+    0 24px 44px rgba(0, 0, 0, 0.32),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+
+.github-portfolio-folder__name {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: clamp(1.04rem, 1.8vw, 1.48rem);
+  line-height: 1.25;
+  color: #fffaf3;
+  text-wrap: balance;
+}
+
+.github-portfolio-folder__meta {
+  margin-top: 0.9rem;
+  display: inline-flex;
+  gap: 0.52rem;
+}
+
+.github-portfolio-folder__meta span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.36rem 0.64rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 230, 210, 0.32);
+  background: rgba(26, 17, 11, 0.36);
+  color: rgba(255, 238, 225, 0.96);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+}
+
+.github-portfolio-folder__files {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.44rem;
+}
+
+.github-portfolio-folder__files li {
+  min-width: 0;
+}
+
+.github-portfolio-folder__files a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.46rem;
+  max-width: 100%;
+  text-decoration: none;
+  color: rgba(255, 245, 235, 0.96);
+  font-size: clamp(0.78rem, 1.25vw, 0.9rem);
+  line-height: 1.35;
+  padding: 0.24rem 0;
+  border-radius: 0.5rem;
+  transition: color 180ms ease, text-shadow 180ms ease, transform 180ms ease;
+}
+
+.github-portfolio-folder__files a:hover {
+  color: #fffdf9;
+  text-shadow: 0 0 16px rgba(255, 186, 130, 0.36);
+  transform: translateX(2px);
+}
+
+.github-portfolio-folder__files a:focus-visible {
+  outline: 2px solid rgba(255, 190, 133, 0.95);
+  outline-offset: 2px;
+}
+
+.github-portfolio-folder__file-dot {
+  width: 0.46rem;
+  height: 0.46rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: rgba(255, 210, 176, 0.92);
+  box-shadow: 0 0 11px rgba(255, 170, 109, 0.54);
+}
+
+@keyframes gh-card-enter {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y) + 24px), 0) rotate(calc(var(--r) * 0.72))
+      scale(0.96);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(calc(-50% + var(--x)), calc(-50% + var(--y)), 0) rotate(var(--r)) scale(1);
+  }
+}
+
+@keyframes gh-pill-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--pill-rotate));
+  }
+  50% {
+    transform: translateY(-6px) rotate(var(--pill-rotate));
+  }
+}
+
+@media (max-width: 1100px) {
+  .github-portfolio-card--left {
+    --x: -174px;
+    --y: 74px;
+  }
+
+  .github-portfolio-card--right {
+    --x: 174px;
+    --y: 74px;
+  }
+
+  .github-portfolio-card--top {
+    --x: 0px;
+    --y: -22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .github-portfolio-header {
+    text-align: left;
+  }
+
+  .github-portfolio-scene {
+    min-height: 0;
+    padding: 0.88rem;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .github-portfolio-pills {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.46rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .github-portfolio-pill {
+    position: static;
+    transform: none !important;
+    min-width: 0;
+  }
+
+  .github-portfolio-stack {
+    height: auto;
+    margin-top: 0;
+    display: grid;
+    gap: 0.78rem;
+  }
+
+  .github-portfolio-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: min(440px, 100%);
+    margin-inline: auto;
+    transform: none !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 14px 24px rgba(6, 5, 5, 0.38);
+  }
+
+  .github-portfolio-card:hover {
+    transform: translateY(-4px) scale(1.01) !important;
+  }
+
+  .github-portfolio-folder {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: min(560px, 100%);
+    margin: 0.8rem auto 0;
+    transform: none;
+  }
+
+  .github-portfolio-folder__back--rear {
+    transform: translateX(calc(-50% + 14px));
+  }
+
+  .github-portfolio-folder__back--mid {
+    transform: translateX(calc(-50% + 8px));
+  }
+
+  .github-portfolio-folder__tab,
+  .github-portfolio-folder__body {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .github-portfolio-section {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .github-portfolio-pill {
+    padding: 0.34rem 0.64rem;
+    font-size: 0.58rem;
+  }
+
+  .github-portfolio-card__tag {
+    margin: 0.56rem 0.66rem 0.46rem;
+    font-size: 0.61rem;
+  }
+
+  .github-portfolio-card__media {
+    margin-inline: 0.58rem;
+  }
+
+  .github-portfolio-card__title {
+    margin: 0.52rem 0.66rem 0.66rem;
+  }
+
+  .github-portfolio-folder__body {
+    padding: 0.86rem;
+  }
+
+  .github-portfolio-folder__meta {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .github-portfolio-card,
+  .github-portfolio-pill {
+    animation: none !important;
+    transition: none !important;
+  }
+}

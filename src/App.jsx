@@ -2,6 +2,7 @@ import Hero from './components/Hero';
 import PortfolioSection from './components/PortfolioSection';
 import Timeline from './components/Timeline';
 import GlassDeck from './components/GlassDeck';
+import GitHubPortfolioSection from './components/GitHubPortfolioSection';
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <Timeline />
       <GlassDeck />
       <PortfolioSection />
+      <GitHubPortfolioSection />
     </>
   );
 }

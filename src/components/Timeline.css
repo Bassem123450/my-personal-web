@@ -479,6 +479,12 @@
 }
 
 @media (max-width: 860px) {
+  .timeline-company-card,
+  .timeline-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .timeline-company-track {
     --company-gap: 0.8rem;
     animation-duration: 15.2s;

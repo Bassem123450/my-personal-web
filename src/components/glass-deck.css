@@ -283,6 +283,14 @@
     padding-bottom: 2.35rem;
   }
 
+  .fanCard {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow:
+      0 14px 26px rgba(8, 6, 6, 0.36),
+      inset 0 1px 0 rgba(255, 239, 224, 0.08);
+  }
+
   .fanDeckHeader h2 {
     font-size: clamp(1.48rem, 8.2vw, 2.1rem);
   }
