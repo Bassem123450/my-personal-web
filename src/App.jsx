@@ -1,19 +1,23 @@
+import { lazy, Suspense } from 'react';
 import Hero from './components/Hero';
-import PortfolioSection from './components/PortfolioSection';
-import Timeline from './components/Timeline';
-import GlassDeck from './components/GlassDeck';
-import GitHubPortfolioSection from './components/GitHubPortfolioSection';
-import ConnectMeSection from './components/ConnectMeSection';
+
+const Timeline = lazy(() => import('./components/Timeline'));
+const GlassDeck = lazy(() => import('./components/GlassDeck'));
+const PortfolioSection = lazy(() => import('./components/PortfolioSection'));
+const GitHubPortfolioSection = lazy(() => import('./components/GitHubPortfolioSection'));
+const ConnectMeSection = lazy(() => import('./components/ConnectMeSection'));
 
 export default function App() {
   return (
     <>
       <Hero />
-      <Timeline />
-      <GlassDeck />
-      <PortfolioSection />
-      <GitHubPortfolioSection />
-      <ConnectMeSection />
+      <Suspense fallback={null}>
+        <Timeline />
+        <GlassDeck />
+        <PortfolioSection />
+        <GitHubPortfolioSection />
+        <ConnectMeSection />
+      </Suspense>
     </>
   );
 }

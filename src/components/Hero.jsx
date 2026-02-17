@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { FaBehance, FaEnvelope, FaGithub } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa6';
+import cvFile from '../assets/Bassem Ahmed - CV.pdf';
 import portraitCutout from '../assets/Me1-cropped.png';
 import portraitFallback from '../assets/Me.png';
 import './Hero.css';
@@ -41,13 +42,16 @@ export default function Hero() {
   const rafRef = useRef(0);
   const targetRef = useRef({ x: 0, y: 0 });
   const currentRef = useRef({ x: 0, y: 0 });
+  const parallaxEnabledRef = useRef(true);
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     const node = heroRef.current;
     if (!node) return undefined;
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    parallaxEnabledRef.current = !reduceMotion && !isTouchDevice;
 
-    if (reduceMotion) {
+    if (!parallaxEnabledRef.current) {
       node.style.setProperty('--parallax-x', '0');
       node.style.setProperty('--parallax-y', '0');
       return undefined;
@@ -72,7 +76,7 @@ export default function Hero() {
 
   const updatePointerTarget = (clientX, clientY) => {
     const node = heroRef.current;
-    if (!node || reduceMotion) return;
+    if (!node || !parallaxEnabledRef.current) return;
 
     const rect = node.getBoundingClientRect();
     const relativeX = (clientX - rect.left) / rect.width;
@@ -113,11 +117,10 @@ export default function Hero() {
 
           <div className="hero-actions">
             <a
-              href="#"
+              href={cvFile}
               className="btn btn-primary"
               aria-label="Download My CV"
-              download
-              onClick={(event) => event.preventDefault()}
+              download="Bassem-Ahmed-CV.pdf"
             >
               Download My CV
             </a>
